@@ -21,3 +21,23 @@ class User(UserMixin, db.Model):
     liked = db.relationship("PostLike",
                             backref = "user", 
                             lazy = "dynamic")
+    
+    
+    
+    
+class Post(db.Model):
+    __tablename__ = "posts"
+
+    id = db.Column(db.Integer, primary_key = True)
+    post_title = db.Column(db.String)
+    post_content = db.Column(db.Text)
+    posted_at = db.Column(db.DateTime)
+    upvotes = db.Column(db.Integer, default = 0)
+    downvotes = db.Column(db.Integer, default = 0)
+    post_by = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    comments = db.relationship("Comment", 
+                                foreign_keys = "Comment.post_id", 
+                                backref = "post", 
+                                lazy = "dynamic")
+     
