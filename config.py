@@ -1,8 +1,8 @@
 import os 
 
 class Config:
-    SECRET_KEY = os.environ.get("SECRET_KEY")
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://diana:access@localhost/blog"
+    SECRET_KEY = os.environ.get("SECRET_KEY") or "youdontknowme"
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://pxlzdvfgdqaacy:d1854c827a7960d0734226abed26a58ee9059c1e03e6c29d8d7f990d3c6ee479@ec2-44-195-169-163.compute-1.amazonaws.com:5432/d5vfmr5fgvjli4"
     UPLOADED_PHOTOS_DEST = "app/static/photos"
 
     # email configurations
@@ -14,7 +14,7 @@ class Config:
 
 class ProdConfig(Config):
     
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://pxlzdvfgdqaacy:d1854c827a7960d0734226abed26a58ee9059c1e03e6c29d8d7f990d3c6ee479@ec2-44-195-169-163.compute-1.amazonaws.com:5432/d5vfmr5fgvjli4"
 
 class TestConfig(Config):
     

@@ -6,14 +6,6 @@ from . import main
 # from .. import db,photos
 
 from flask_login import login_required,current_user
-
-@main.route('/')
-def index():
-
-
-    return render_template('main/index.html')
-    from flask import (render_template, request, redirect, 
-                   url_for, abort)
 from . import main
 from ..models import User, Comment, Post, Subscribers
 from flask_login import login_required, current_user
@@ -36,7 +28,7 @@ def index():
         db.session.commit()
         welcome_message("Thank you for subscribing to the CM blog", 
                         "email/welcome", new_sub.email)
-    return render_template("index.html",
+    return render_template("main/index.html",
                             posts = posts,
                             quote = quote)
 
@@ -61,7 +53,7 @@ def post(id):
         new_comment.save_comment()
         return redirect(url_for("main.post", id = post.id))
 
-    return render_template("post.html",
+    return render_template("main/post.html",
                             post = post,
                             comments = comments,
                             comment_form = comment_form,
@@ -100,7 +92,7 @@ def edit_post(id):
         db.session.commit()
         return redirect(url_for("main.post", id = post.id))
 
-    return render_template("edit_post.html", 
+    return render_template("main/edit_post.html", 
                             post = post,
                             edit_form = edit_form)
 
@@ -131,7 +123,7 @@ def new_post():
             pass
         return redirect(url_for("main.post", id = new_post.id))
     
-    return render_template("new_post.html",
+    return render_template("main/new_post.html",
                             post_form = post_form)
 
 @main.route("/profile/<int:id>", methods = ["POST", "GET"])
