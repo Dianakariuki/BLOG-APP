@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse bg-dark">
   <a class="navbar-brand text-white" href="#">Navbar</a>
-  <!-- <button
+  <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
@@ -10,13 +10,14 @@
     aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
-  </button> -->
-  <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#">Features</a>
-      <a class="nav-link" href="#">Pricing</a>
-      <a class="nav-link disabled">Disabled</a>
-    </div>
-  </div> -->
+  </button> 
+  <ul class="nav navbar-nav navbar-right">
+    {% if current_user.is_authenticated %}
+    <li style="color:white;padding:15px;">{{current_user.username}}</li>
+    <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+    {% else %}
+    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+    {%endif%}
+  </ul>
+#....
 </nav>
