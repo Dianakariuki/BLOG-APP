@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Collins Muriuki | Blog</title>
+  <title>Blog-world</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -35,8 +35,8 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000;">
-    <a class="navbar-brand" href="/" style="font-family: 'Major Mono Display', monospace; font-size: 30px">C.M</a>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgb(63, 73, 158);">
+    <a class="navbar-brand" href="/" style="font-family: 'Major Mono Display', monospace; font-size: 30px">BLOG-WORLD</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
       <ul class="navbar-nav mr-auto">
         {%if current_user.is_authenticated%}
         <li class="nav-item">
-          <a class="nav-link" href="/post/new">Create Post</a>
+          <a class="nav-link" href="/post/new">Create a New Post</a>
         </li>
         {%endif%}
       </ul>
@@ -56,21 +56,21 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Account
+              ACCOUNT
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{url_for('main.profile', id = current_user.id)}}">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a>
+              <a class="dropdown-item" href="{{url_for('auth.logout')}}">LOGOUT</a>
             </div>
           </li>
           {%else%}
           <form class="form-inline my-2 my-lg-0" method="POST">
             <input class="form-control mr-sm-2" type="email" placeholder="Email" name="subscriber" required>
-            <button class="btn btn-outline-info btn-sm" type="submit" style="padding: 8px;">Subscribe</button>
+            <button class="btn btn-primary btn-sm" type="submit" style="padding: 8px;">Subscribe</button>
           </form>
           <li class="nav-item">
-            <a class="nav-link" href="/authenticate/login">Login</a>
+            <a class="nav-link" href="/authenticate/login"><strong>LOGIN</strong></a>
           </li>
           {%endif%}
         </ul>
@@ -88,7 +88,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="https://mobile.twitter.com/collinsmuriuki_" target="_blank">
+              <a href="https://mobile.twitter.com/k_w_Diana" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
@@ -96,7 +96,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.instagram.com/collinsmuriuki_/" target="_blank">
+              <a href="#" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
@@ -104,7 +104,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/collinsmuriuki" target="_blank">
+              <a href="https://github.com/Dianakariuki" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -112,7 +112,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Collins Muriuki 2019</p>
+          <p class="copyright text-muted">Copyright &copy; Diana Kariuki 2022</p>
         </div>
       </div>
     </div>
