@@ -3,9 +3,8 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from config import config_options
-
-
-
+from flask_mail import Mail
+from flask_login import LoginManager
 
 # from flask_sqlalchemy import SQLAlchemy
 
@@ -13,8 +12,7 @@ from config import config_options
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
-
-from flask_login import LoginManager
+mail = Mail()
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -46,8 +44,8 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
     
       # setting config
-    from .requests import configure_request
-    configure_request(app)
+    # from .requests import configure_request
+    # configure_request(app)
   
   
     return app
