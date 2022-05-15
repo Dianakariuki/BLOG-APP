@@ -4,6 +4,7 @@ from flask_script import Manager, Server
 from app.models import User,Post,Comment,PostLike
 
 
+
 # from flask_script import Manager,Server
 # # from  flask_migrate import Migrate, MigrateCommand
 
