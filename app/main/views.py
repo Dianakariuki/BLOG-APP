@@ -5,7 +5,7 @@ from . import main
 # from ..models import User
 # from .. import db,photos
 
-# from flask_login import login_required,current_user
+from flask_login import login_required,current_user
 
 @main.route('/')
 def index():
