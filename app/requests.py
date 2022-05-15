@@ -1,15 +1,13 @@
+import requests
+from .models import Quote
 
-import urllib.request,json
-# import requests 
+url = "http://quotes.stormconsultancy.co.uk/random.json"
 
-# Getting api key
-api_key = None
+def get_quote():
+    """
+    Function to consume http request and return a Quote class instance
+    """
+    response = requests.get(url).json()
 
-
-def configure_request(app):
-    global api_key
-    # api_key = app.config['API_KEY']
-
-
-    
-    
+    random_quote = Quote(response.get("author"), response.get("quote"))
+    return random_quote
