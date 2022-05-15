@@ -43,7 +43,7 @@ To work with The blog App you need to have some few prerequisites.
 
 2. You will also need python installed and knowledge of python
 
-3. To get to use **the_blog** first you need to clone the repository. 
+3. To get to use **blog app** first you need to clone the repository. 
 
 
 
